@@ -6,21 +6,9 @@ if(NOT TARGET Choreograph)
     get_filename_component(CINDER_PATH "${Choreograph_PROJECT_ROOT}/../.." ABSOLUTE)
 
     # Make a list of source files and define that to be ${SOURCE_LIST}.
-    #file(GLOB SOURCE_LIST CONFIGURE_DEPENDS
-    #        "${Choreograph_PROJECT_ROOT}/src/rph/NotificationManager.cpp"
-    #        "${Choreograph_PROJECT_ROOT}/src/rph/Notification.cpp"
-    #        )
     file(GLOB SOURCE_LIST CONFIGURE_DEPENDS
-            "${Cinder-Notifications_PROJECT_ROOT}/src/**/*.h"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/**/*.hpp"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/**/*.cc"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/**/*.cpp"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/**/*.c"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/*.h"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/*.hpp"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/*.cc"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/*.cpp"
-            "${Cinder-Notifications_PROJECT_ROOT}/src/*.c")
+            "${Choreograph_PROJECT_ROOT}/src/choreograph/*.cpp"
+            )
 
     # Create the library!
     add_library(Choreograph ${SOURCE_LIST})
